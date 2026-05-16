@@ -1,0 +1,20 @@
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+~$*
+.env
+.env.*
+node_modules/
+dist/
+build/
+.cache/
+
+# Exclude private immigration and legal evidence files if copied accidentally.
+*RFE*
+*I140*
+*I-140*
+*petition*
+*.docx
+*.pdf
+
