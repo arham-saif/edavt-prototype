@@ -6,7 +6,7 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
   "density": "comfortable",
   "displayFont": "Instrument Serif",
   "showPrivacyStrip": true,
-  "fitMode": "fit"
+  "fitMode": "width"
 }/*EDITMODE-END*/;
 
 function App() {
@@ -157,7 +157,7 @@ function App() {
               onChange={(v) => setTweak("fitMode", v)}
               options={[
                 { value: "fit",   label: "Fit screen" },
-                { value: "width", label: "Fit width" },
+                { value: "width", label: "Fit-width" },
               ]}
             />
             <window.TweakColor
