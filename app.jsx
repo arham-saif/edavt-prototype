@@ -101,6 +101,7 @@ function App() {
 
   return (
     <div className={"stage" + (tweaks.fitMode === "width" ? " fit-width" : "")}>
+    <a href="#main-content" className="skip-link">Skip to main content</a>
     <div className="stage-inner" ref={stageRef}>
     <div className="app">
       <Sidebar
@@ -108,27 +109,30 @@ function App() {
         role={role} setRole={setRole} roles={D.ROLES}
         alertCount={alertCount}
       />
-      <main className="main">
-        <div className="topbar">
-          <div className="crumbs">
+      <main className="main" id="main-content" tabIndex="-1">
+        <div className="topbar" role="banner">
+          <nav className="crumbs" aria-label="Breadcrumb">
             <span>{crumbs[0]}</span>
-            <span className="sep">/</span>
-            <strong>{crumbs[1]}</strong>
-          </div>
+            <span className="sep" aria-hidden="true">/</span>
+            <strong aria-current="page">{crumbs[1]}</strong>
+          </nav>
           <div className="topbar-actions">
-            <div className="search">
-              <Icon.search />
-              <input placeholder="Search students, schools, models…" />
-              <kbd>⌘K</kbd>
-            </div>
-            <button className="icon-btn" title="Notifications">
-              <Icon.bell />
-              <span className="dot"></span>
+            <label className="search">
+              <span className="sr-only">Search students, schools, models</span>
+              <Icon.search aria-hidden="true" focusable="false" />
+              <input placeholder="Search students, schools, models…" type="search" />
+              <kbd aria-hidden="true">⌘K</kbd>
+            </label>
+            <button className="icon-btn" aria-label={`Notifications, ${alertCount} new`}>
+              <Icon.bell aria-hidden="true" focusable="false" />
+              <span className="dot" aria-hidden="true"></span>
             </button>
-            <button className="icon-btn" title="Refresh"><Icon.refresh /></button>
+            <button className="icon-btn" aria-label="Refresh data">
+              <Icon.refresh aria-hidden="true" focusable="false" />
+            </button>
           </div>
         </div>
-        <div className="content">
+        <div className="content" role="region" aria-label={crumbs[1]}>
           <ViewComponent role={role} tweaks={tweaks} />
         </div>
       </main>
@@ -136,10 +140,10 @@ function App() {
     </div>
     <button
       className="tweaks-fab"
-      title="Open tweaks panel"
+      aria-label="Open tweaks panel"
       onClick={() => window.postMessage({ type: '__activate_edit_mode' }, '*')}
     >
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" focusable="false">
         <line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/>
         <line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/>
         <line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/>

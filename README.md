@@ -26,6 +26,7 @@ This repository hosts the EDAVT product prototype and supporting technical docum
 - **Audit log:** role, action, scope, timestamp, and review flags for privacy-accountable access.
 - **Privacy and compliance:** prototype control mapping for FERPA, COPPA, state privacy laws, SOC 2 roadmap planning, and NIST alignment.
 - **Role switching:** district superintendent, school principal, guidance counselor, classroom teacher, and institutional researcher views.
+- **Accessibility-focused shell:** semantic navigation landmarks, skip link, visible keyboard focus states, screen-reader labels, reduced-motion handling, and higher-contrast UI tokens.
 
 ## Quick Start
 

@@ -9,12 +9,8 @@ node_modules/
 dist/
 build/
 .cache/
-
-# Exclude private immigration and legal evidence files if copied accidentally.
-*RFE*
-*I140*
-*I-140*
-*petition*
+local-artifacts/
+private-artifacts/
+prototype v2/
 *.docx
 *.pdf
-
